@@ -19,6 +19,11 @@ const routes = [
     path: '/olvasók',
     name: 'readers',
     component: () => import('../views/Readers.vue')
+  },
+  {
+    path: '/kölcsönzések',
+    name: 'lendings',
+    component: () => import('../views/Lendings.vue')
   }
 ];
 

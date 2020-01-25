@@ -13,7 +13,7 @@
         <b-navbar-item tag="router-link" :to="{ name: 'home' }">Főoldal</b-navbar-item>
         <b-navbar-item tag="router-link" :to="{ name: 'books' }">Állományok</b-navbar-item>
         <b-navbar-item tag="router-link" :to="{ name: 'readers' }">Olvasók</b-navbar-item>
-        <b-navbar-item href="#">Kölcsönzések</b-navbar-item>
+        <b-navbar-item tag="router-link" :to="{ name: 'lendings' }">Kölcsönzések</b-navbar-item>
       </template>
 
       <template slot="end">
