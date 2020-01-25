@@ -36,12 +36,15 @@ export default {
   props: {
     resourceName: { type: String, required: true },
     resourceUrl: { type: String, required: true },
-    columns: { type: Array, required: true }
+    columns: { type: Array, required: true },
+    dataFormatting: { type: Function, required: false }
   },
   created() {
-    axios.get(this.resourceUrl).then(data => {
+    axios.get(this.resourceUrl).then(axiosResponse => {
+      let resources = axiosResponse.data;
+      if (this.dataFormatting) resources = this.dataFormatting(resources);
       this.isLoadingResource = false;
-      this.tableData = data.data;
+      this.tableData = resources;
     });
   }
 };

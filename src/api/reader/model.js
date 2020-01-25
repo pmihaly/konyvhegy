@@ -28,14 +28,13 @@ const readerSchema = new Schema(
 
 readerSchema.methods = {
   view(full) {
-    const birthDate = new Date(Date.parse(this.birthDate));
     const view = {
       // simple view
       id: this.id,
       fullName: this.fullName,
       email: this.email,
       phone: this.phone,
-      birthDate: birthDate.toLocaleDateString('hu-HU'),
+      birthDate: this.birthDate,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt
     };

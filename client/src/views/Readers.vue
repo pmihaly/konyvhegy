@@ -30,6 +30,7 @@
         centered: true
       }
     ]"
+    :dataFormatting="dataFormatting"
   />
 </template>
 
@@ -37,6 +38,19 @@
 import ResourceCRUD from '../components/ResourceCRUD';
 
 export default {
-  components: { ResourceCRUD }
+  components: { ResourceCRUD },
+  data() {
+    return {
+      tableData: [],
+      dataFormatting: function(readers) {
+        return readers.map(readerData => {
+          readerData.birthDate = new Date(Date.parse(readerData.birthDate)).toLocaleString(
+            navigator.language || navigator.userLanguage
+          );
+          return readerData;
+        });
+      }
+    };
+  }
 };
 </script>
