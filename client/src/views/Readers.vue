@@ -6,7 +6,6 @@
       {
         field: 'id',
         label: 'Azonosító',
-        width: '100',
         searchable: true
       },
       {
