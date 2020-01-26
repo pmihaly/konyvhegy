@@ -40,13 +40,12 @@ export default {
   components: { ResourceCRUD },
   data() {
     return {
-      tableData: [],
       dataFormatting: function(readers) {
-        return readers.map(readerData => {
-          readerData.birthDate = new Date(Date.parse(readerData.birthDate)).toLocaleString(
+        return readers.map(reader => {
+          reader.birthDate = new Date(Date.parse(reader.birthDate)).toLocaleString(
             navigator.language || navigator.userLanguage
           );
-          return readerData;
+          return reader;
         });
       }
     };
