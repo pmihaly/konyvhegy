@@ -1,6 +1,7 @@
 <template>
   <ResourceCRUD
     resourceName="olvasó"
+    resourceNamePlural="olvasók"
     resourceUrl="/readers"
     :columns="[
       {

@@ -1,6 +1,7 @@
 <template>
   <ResourceCRUD
     resourceName="kölcsönzés"
+    resourceNamePlural="kölcsönzések"
     resourceUrl="/lendings"
     :columns="[
       {
@@ -39,9 +40,9 @@ export default {
         return lendings.map(lending => {
           lending.reader = lending.reader.fullName;
           lending.book = lending.book.title;
-          lending.deadline = new Date(Date.parse(lending.deadline)).toLocaleString(
-            navigator.language || navigator.userLanguage
-          );
+          lending.deadline = new Date(
+            Date.parse(lending.deadline)
+          ).toLocaleString(navigator.language || navigator.userLanguage);
           return lending;
         });
       }
