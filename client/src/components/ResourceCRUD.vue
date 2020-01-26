@@ -2,6 +2,15 @@
   <section>
     <div class="field is-grouped">
       <b-button class="control" type="is-success" icon-left="plus"
+        >Új {{ resourceName }} hozzáadása</b-button
+      >
+      <b-button
+        class="control"
+        type="is-primary"
+        icon-left="pencil"
+        :disabled="!checkedObjects.length"
+        >{{ buttonText('szerkesztése') }}</b-button
+      >
       <b-button
         class="control"
         type="is-danger"
